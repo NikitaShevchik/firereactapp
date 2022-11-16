@@ -10,7 +10,6 @@ import { useLocation, withRouter } from "react-router";
 const Home = () => {
     const navigate = useNavigate()
     const location = useLocation()
-    console.log(location.pathname)
 
     return (
         <div className='home'>

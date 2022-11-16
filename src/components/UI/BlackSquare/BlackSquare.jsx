@@ -1,5 +1,6 @@
 import React from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
+import ButtonsWelcome from '../Buttons/ButtonsWelcome/ButtonsWelcome'
 import './BlackSquare.scss'
 
 const BlackSquare = ({ transform, width }) => {
@@ -11,12 +12,17 @@ const BlackSquare = ({ transform, width }) => {
     }
     return (
         <div className="logo" style={trans}>
-            Build Simple react app with sign in/ sign up/ logout functionality
+            <span>
+                Build Simple React App With
+                <a className="logo__link" onClick={() => navigate('/login')}> Sign In</a> /
+                <a className="logo__link" onClick={() => navigate('/signup')}> Sign Up</a> /
+                <a className="logo__link" onClick={() => navigate('/')}> Logout</a> functionality
+            </span>
             {location.pathname === '/'
                 &&
                 <div className="logo__buttons">
-                    <button className='logo__buton' onClick={() => navigate('/login')}>Log In</button>
-                    <button className='logo__buton' onClick={() => navigate('/signup')}>Sign Up</button>
+                    <ButtonsWelcome text={'Log In'} cb={() => navigate('/login')} />
+                    <ButtonsWelcome text={'Sign Up'} cb={() => navigate('/signup')} />
                 </div>
             }
         </div >
