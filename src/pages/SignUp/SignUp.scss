@@ -67,4 +67,13 @@ $fsadapt: calc(1vh + 1vw);
         font-size: calc($fsadapt / 2);
         margin-top: calc($fsadapt * 1.5);
     }
+    &__subtext {
+        font-size: calc($fsadapt / 1.5);
+        padding-bottom: calc($fsadapt/ 3);
+    }
+    &__date {
+        display: flex;
+        flex-direction: row;
+        gap: calc($fsadapt / 4);
+    }
 }

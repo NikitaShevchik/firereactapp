@@ -4,7 +4,7 @@ import { AiOutlineLock, AiOutlineMail, AiOutlineUser } from 'react-icons/ai'
 import { Outlet, useNavigate } from 'react-router-dom'
 import BlackSquare from '../../components/UI/BlackSquare/BlackSquare'
 import ButtonForm from '../../components/UI/Buttons/ButtonForm/ButtonForm'
-import Input from '../../components/UI/Input/Input'
+import Input from '../../components/UI/Input/LogIn/Input'
 import { app } from '../../firebase'
 import './LogIn.scss'
 
@@ -23,7 +23,6 @@ const LogIn = () => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
                 alert(errorMessage)
-                console.log(errorCode)
             });
     }
 
@@ -42,7 +41,7 @@ const LogIn = () => {
                                         Log In to Your Account
                                     </div>
                                 </div>
-                                <div className="form__registration">
+                                <div className="form__registration" >
                                     <div className="form__inputs">
                                         <Input type={"text"} icon={<AiOutlineMail />} placeholder="Email Address" state={email} setState={setEmail} />
                                         <Input type={"password"} icon={<AiOutlineLock />} placeholder="Password" state={password} setState={setPassword} />

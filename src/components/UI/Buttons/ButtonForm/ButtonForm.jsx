@@ -3,7 +3,7 @@ import './ButtonForm.scss'
 
 const ButtonForm = ({ text, cb }) => {
     return (
-        <button className="button" onClick={cb}>
+        <button type='submit' className="button" onClick={cb}>
             {text}
         </button>
     )
