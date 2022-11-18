@@ -10,7 +10,6 @@ import { useLocation, withRouter } from "react-router";
 const Home = () => {
     const navigate = useNavigate()
     const location = useLocation()
-
     return (
         <div className='home'>
             <BlackSquare transform={location.pathname === '/login' ? 66.66 : 0

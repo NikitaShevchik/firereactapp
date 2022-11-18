@@ -14,11 +14,13 @@ const LogIn = () => {
     const [password, setPassword] = useState('')
     const auth = getAuth(app)
 
+    //async funct try catch
+
     function login() {
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 const user = userCredential.user;
-            })
+            }).then(() => navigate('/'))
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;

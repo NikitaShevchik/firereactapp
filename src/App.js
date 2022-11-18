@@ -4,6 +4,7 @@ import LogIn from './pages/LogIn/LogIn';
 import Header from './components/elements/header/Header';
 import Footer from './components/elements/footer/Footer';
 import SignUp from './pages/SignUp/SignUp';
+import './firebase'
 import './App.scss';
 
 function App() {
