@@ -10,7 +10,6 @@ import Input from '../../components/UI/Input/SignUp/Input'
 import Select from '../../components/UI/Select/Select';
 import { isValidDay, isValidEmail, isValidFullName, isValidPassword, isValidYear, mainValidator } from '../../validation.js';
 import ButtonFormDisabled from '../../components/UI/Buttons/ButtonForm/ButtonFormDisabled/ButtonFormDisabled';
-// import { IUser } from '../../types/types';
 import './SignUp.scss'
 import { user } from '../../redux/reducers/userReducer.tsx';
 
