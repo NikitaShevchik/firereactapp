@@ -1,0 +1,22 @@
+$fsadapt: calc(1vh + 1vw);
+
+.error {
+    margin-bottom: calc($fsadapt / 2);
+    display: flex;
+    color: rgb(220, 0, 0);
+    align-items: center;
+
+    &__icon {
+        font-size: calc($fsadapt / 1);
+        height: calc($fsadapt / 1);
+        display: flex;
+        align-items: center;
+    }
+    &__text {
+        display: flex;
+        align-items: center;
+        font-size: calc($fsadapt / 1.7);
+        display: inline-block;
+        height: 100%;
+    }
+}
