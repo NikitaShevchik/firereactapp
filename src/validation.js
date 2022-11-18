@@ -7,7 +7,6 @@ export function isValidFullName(fullName) {
 }
 
 export function isValidPassword(password) {
-    // const beginWithoutDigit = /^\D.*$/; 
     const withoutSpecialChars = /^[^-() /]*$/;
     const containsLetters = /^.*[a-zA-Z]+.*$/;
     const minimum8Chars = /^.{8,}$/;
@@ -37,7 +36,6 @@ export function isValidYear(year) {
         return false
     }
 }
-
 
 export function mainValidator(email, fullName, password, day, year) {
     if (isValidEmail(email)

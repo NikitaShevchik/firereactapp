@@ -1,0 +1,6 @@
+$fsadapt: calc(1vh + 1vw);
+
+.offer {
+    font-size: calc($fsadapt / 2);
+    margin-top: calc($fsadapt * 1.5);
+}

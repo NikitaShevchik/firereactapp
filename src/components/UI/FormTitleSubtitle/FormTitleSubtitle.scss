@@ -1,0 +1,14 @@
+$fsadapt: calc(1vh + 1vw);
+
+.text {
+    width: 100%;
+    padding-bottom: calc($fsadapt);
+    &__title {
+        font-size: calc($fsadapt);
+        font-weight: 700;
+        padding-bottom: calc($fsadapt / 7);
+    }
+    &__subtitle {
+        font-size: calc($fsadapt / 1.3);
+    }
+}

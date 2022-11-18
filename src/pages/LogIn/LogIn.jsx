@@ -1,32 +1,17 @@
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import React, { useState } from 'react'
-import { AiOutlineLock, AiOutlineMail, AiOutlineUser } from 'react-icons/ai'
-import { Outlet, useNavigate } from 'react-router-dom'
-import BlackSquare from '../../components/UI/BlackSquare/BlackSquare'
-import ButtonForm from '../../components/UI/Buttons/ButtonForm/ButtonForm'
-import Input from '../../components/UI/Input/LogIn/Input'
-import { app } from '../../firebase'
+import React from 'react'
+// import { AiOutlineLock, AiOutlineMail, AiOutlineUser } from 'react-icons/ai'
+import { useNavigate } from 'react-router-dom';
+import SignInForm from '../../components/elements/Forms/SignInForm/SignInForm';
+// import ButtonForm from '../../components/UI/Buttons/ButtonForm/ButtonForm'
+import FormOffer from "../../components/UI/FormOffer/FormOffer";
+import FormTitleSubtitle from "../../components/UI/FormTitleSubtitle/FormTitleSubtitle";
+// import Input from '../../components/UI/Input/LogIn/Input'
+import Plug from "../../components/UI/Plug/Plug";
 import './LogIn.scss'
 
 const LogIn = () => {
     const navigate = useNavigate()
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-    const auth = getAuth(app)
-
     //async funct try catch
-
-    function login() {
-        signInWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
-                const user = userCredential.user;
-            }).then(() => navigate('/'))
-            .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                alert(errorMessage)
-            });
-    }
 
     return (
         <div className="login">
@@ -35,29 +20,13 @@ const LogIn = () => {
                     <div className="login__form form">
                         <div className="form__body">
                             <div className="form__content">
-                                <div className="form__text">
-                                    <div className="form__title">
-                                        Welcome Back!
-                                    </div>
-                                    <div className="form__subtitle">
-                                        Log In to Your Account
-                                    </div>
-                                </div>
-                                <div className="form__registration" >
-                                    <div className="form__inputs">
-                                        <Input type={"text"} icon={<AiOutlineMail />} placeholder="Email Address" state={email} setState={setEmail} />
-                                        <Input type={"password"} icon={<AiOutlineLock />} placeholder="Password" state={password} setState={setPassword} />
-                                    </div>
-                                    <ButtonForm text={"Log In"} cb={() => login()} />
-                                </div>
-                                <div className="form__signup">
-                                    Don't have an account? <a onClick={() => navigate('/signup')}>Sign Up</a>
-                                </div>
+                                <FormTitleSubtitle title={"Welcome Back!"} subtitle={"Log In to Your Account"} />
+                                <SignInForm />
+                                <FormOffer text={"Don't have an account?"} linkText={"Sign Up"} cb={() => navigate('/signup')} />
                             </div>
                         </div>
                     </div>
-                    <div className="login__logo">
-                    </div>
+                    <Plug wdth={60} />
                 </div>
             </div>
         </div>
