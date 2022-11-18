@@ -1,5 +1,5 @@
-import { createUserWithEmailAndPassword, getAuth } from 'firebase/auth'
 import React, { useState } from 'react'
+import { createUserWithEmailAndPassword, getAuth } from 'firebase/auth'
 import { useForm } from 'react-hook-form'
 import { AiOutlineLock, AiOutlineMail, AiOutlineUser } from 'react-icons/ai'
 import { useNavigate } from 'react-router-dom'
@@ -28,18 +28,7 @@ const SignUpForm = () => {
     const wBirthDay = watch("BirthDay")
     const wBirthMonth = watch("BirthMonth")
     const wBirthYear = watch("BirthYear")
-    // function signUp() {
-    //     createUserWithEmailAndPassword(auth, wEmail, wPassword)
-    //         .then((userCredential) => {
-    //             const user = userCredential.user;
-    //         })
-    //         .then(alert('Успешная регистрация!'))
-    //         .catch((error) => {
-    //             const errorCode = error.code;
-    //             const errorMessage = error.message;
-    //             alert(errorMessage)
-    //         });
-    // }
+
     async function signUp() {
         try {
             await createUserWithEmailAndPassword(auth, wEmail, wPassword)
@@ -62,7 +51,6 @@ const SignUpForm = () => {
             setErrorCodeFirebase(errorCode)
         };
     }
-    // onSubmit={handleSubmit((data) => console.log(data))} ..form
     return (
         <div className="form">
             <form className="form__inputs" onSubmit={handleSubmit((data) => console.log(data))}>

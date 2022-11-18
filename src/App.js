@@ -3,8 +3,8 @@ import Home from './pages/Home/Home';
 import LogIn from './pages/LogIn/LogIn';
 import SignUp from './pages/SignUp/SignUp';
 import './firebase'
-import './App.scss';
 import Main from './pages/Main/Main';
+import './App.scss';
 
 function App() {
   return (

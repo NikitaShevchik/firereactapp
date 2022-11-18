@@ -1,17 +1,13 @@
 import React from 'react'
-// import { AiOutlineLock, AiOutlineMail, AiOutlineUser } from 'react-icons/ai'
 import { useNavigate } from 'react-router-dom';
 import SignInForm from '../../components/elements/Forms/SignInForm/SignInForm';
-// import ButtonForm from '../../components/UI/Buttons/ButtonForm/ButtonForm'
 import FormOffer from "../../components/UI/FormOffer/FormOffer";
 import FormTitleSubtitle from "../../components/UI/FormTitleSubtitle/FormTitleSubtitle";
-// import Input from '../../components/UI/Input/LogIn/Input'
 import Plug from "../../components/UI/Plug/Plug";
 import './LogIn.scss'
 
 const LogIn = () => {
     const navigate = useNavigate()
-    //async funct try catch
 
     return (
         <div className="login">

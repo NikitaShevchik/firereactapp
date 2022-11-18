@@ -2,7 +2,7 @@ import React from 'react'
 import { BiError } from 'react-icons/bi'
 import './FormError.scss'
 
-const FormError = ({ error, text }) => {
+const FormError = ({ text }) => {
     return (
         <div className="error">
             <div className="error__icon"><BiError /></div>

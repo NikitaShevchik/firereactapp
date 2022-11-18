@@ -1,16 +1,14 @@
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
 import React, { useState } from 'react'
 import { AiOutlineLock, AiOutlineMail } from 'react-icons/ai'
-import { useNavigate } from 'react-router-dom'
 import ButtonForm from '../../../UI/Buttons/ButtonForm/ButtonForm'
 import Input from '../../../UI/Input/LogIn/Input'
 import { app } from '../../../../firebase'
-import '../Forms.scss'
 import { userInfo } from '../../../../redux/reducers/userReducer.tsx'
 import FormError from '../../../UI/FormError/FormError'
+import '../Forms.scss'
 
 const SignInForm = () => {
-    const navigate = useNavigate()
     const [errorCodeFirebase, setErrorCodeFirebase] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')

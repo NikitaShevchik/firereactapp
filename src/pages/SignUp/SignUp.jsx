@@ -12,7 +12,6 @@ import './SignUp.scss'
 
 const SignUp = () => {
     const navigate = useNavigate();
-    // const db = getFirestore(app);
 
     const [userEmail, setUserEmail] = useState(userInfo.getState().email)
     userInfo.subscribe(userChanged)
@@ -20,8 +19,6 @@ const SignUp = () => {
         setUserEmail(userInfo.getState().email)
         console.log(userEmail)
     }
-
-    // user.dispatch({ type: 'REMOVE_USER' })}
 
     return (
         <div className="signup">
