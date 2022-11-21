@@ -1,6 +1,5 @@
-import { IAction, IUser } from "../../types/types"
-import { createStore } from "../store.tsx"
-
+import { IAction, IUser } from "../../types/types";
+import createStore from "../store";
 
 let initUser: IUser = {
     email: null,

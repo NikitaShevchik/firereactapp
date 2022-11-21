@@ -1,0 +1,9 @@
+$fsadapt: calc(1vh + 1vw);
+
+.welcomebutton {
+    font-size: calc($fsadapt / 2);
+    padding: calc($fsadapt / 3) calc($fsadapt * 1.7);
+    margin: 0 calc($fsadapt / 5);
+    border-radius: calc($fsadapt / 2.5);
+    background-color: #fff;
+}

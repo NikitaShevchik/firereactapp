@@ -1,4 +1,4 @@
-export function createStore<T, K>(reducer: (state: T, action: { type: string; payload?: K }) => T, initialState: T) {
+function createStore<T, K>(reducer: (state: T, action: { type: string; payload?: K }) => T, initialState: T) {
     let state = initialState;
     let subscribing: () => void;
     return {
@@ -16,3 +16,5 @@ export function createStore<T, K>(reducer: (state: T, action: { type: string; pa
         }
     }
 }
+
+export default createStore;
