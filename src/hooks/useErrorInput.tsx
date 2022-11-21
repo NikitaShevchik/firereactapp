@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import FormError from '../components/FormError/FormError';
 
 const useErrorInput = (error: string) => {
