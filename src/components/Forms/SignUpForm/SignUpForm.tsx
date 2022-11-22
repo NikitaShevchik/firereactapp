@@ -18,27 +18,13 @@ import Input from '../../Input/SignUp/Input';
 import Select from '../../Select/Select';
 import ButtonForm from '../../Buttons/ButtonForm/ButtonFormDisabled/ButtonForm';
 import ButtonFormDisabled from '../../Buttons/ButtonForm/ButtonFormDisabled/ButtonFormDisabled';
+import { monthsArray } from '../../Select/arraysForSelect/arrayMonths';
 import '../Forms.scss';
-
-const monthsArray = [
-  'January',
-  'February',
-  'March',
-  'April',
-  'May',
-  'June',
-  'July',
-  'August',
-  'September',
-  'October',
-  'November',
-  'December',
-];
 
 const SignUpForm = () => {
   const auth = getAuth(app);
   const navigate = useNavigate();
-  const { register, handleSubmit, watch } = useForm();
+  const { register, watch } = useForm();
   const [errorCodeFirebase, setErrorCodeFirebase] = useState('');
 
   const wFullName = watch('FullName');
@@ -48,7 +34,8 @@ const SignUpForm = () => {
   const wBirthMonth = watch('BirthMonth');
   const wBirthYear = watch('BirthYear');
 
-  async function signUp() {
+  async function signUp(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
     try {
       const { user } = await createUserWithEmailAndPassword(auth, wEmail, wPassword);
       const token = await user.getIdToken();
@@ -74,7 +61,7 @@ const SignUpForm = () => {
   }
   return (
     <div className='form'>
-      <form className='form__inputs' onSubmit={handleSubmit((data) => console.log(data))}>
+      <form className='form__inputs' onSubmit={signUp}>
         <Input
           watch={watch}
           validate={isValidFullName}
@@ -128,7 +115,7 @@ const SignUpForm = () => {
           />
         </div>
         {mainValidator({ wEmail, wFullName, wPassword, wBirthDay, wBirthYear }) ? (
-          <ButtonForm text={'Register'} cb={() => signUp()} />
+          <ButtonForm text={'Register'} />
         ) : (
           <ButtonFormDisabled text={'Register'} />
         )}

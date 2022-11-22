@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { FormOfferProps } from '../../types/types';
 import './FormOffer.scss';

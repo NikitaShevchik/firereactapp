@@ -1,88 +1,76 @@
 import { ReactNode } from 'react';
 import { FieldValues, UseFormRegister, UseFormWatch } from 'react-hook-form';
-
 export interface IUser {
-    email?: string | null;
-    fullName?: string | null;
-    id?: string | null;
-    token?: string | null;
-    birthMonth?: string | null;
-    birthDay?: number | null;
-    birthYear?: number | null;
+  email?: string | null;
+  fullName?: string | null;
+  id?: string | null;
+  token?: string | null;
+  birthMonth?: string | null;
+  birthDay?: number | null;
+  birthYear?: number | null;
 }
-
 export interface IAction<T> {
-    type: string;
-    payload?: Partial<T>;
+  type: string;
+  payload?: Partial<T>;
 }
-
 export interface IValidation {
-    email: string;
-    fullName: string;
-    password: string;
-    day: number;
-    year: number;
+  email: string;
+  fullName: string;
+  password: string;
+  day: number;
+  year: number;
 }
 export interface IMainValidation {
-    wEmail: string;
-    wFullName: string;
-    wPassword: string;
-    wBirthDay: number;
-    wBirthYear: number;
+  wEmail: string;
+  wFullName: string;
+  wPassword: string;
+  wBirthDay: number;
+  wBirthYear: number;
 }
-
 export interface ButtonProps {
-    text: string;
-    cb?: VoidFunction;
+  text: string;
+  cb?: VoidFunction;
 }
-
 export interface FormErrorProps {
-    text: string;
+  text: string;
 }
-
 export interface FormOfferProps {
-    text: string;
-    linkText: string;
-    path: string;
+  text: string;
+  linkText: string;
+  path: string;
 }
-
 export interface SelectProps<T> {
-    array: Array<T>;
-    placeholder: string;
-    reg: UseFormRegister<FieldValues>;
-    name: string;
+  array: Array<T>;
+  placeholder: string;
+  reg: UseFormRegister<FieldValues>;
+  name: string;
 }
-
 export interface PlugProps {
-    wdth: number;
+  wdth: number;
 }
-
 export interface InputSignUpProps<T> {
-    watch: UseFormWatch<FieldValues>;
-    icon?: ReactNode;
-    placeholder?: string;
-    type?: string;
-    maxLength?: number;
-    reg: UseFormRegister<FieldValues>;
-    name: string;
-    validate: (value: T) => boolean; 
+  watch: UseFormWatch<FieldValues>;
+  icon?: ReactNode;
+  placeholder?: string;
+  type?: string;
+  maxLength?: number;
+  reg: UseFormRegister<FieldValues>;
+  name: string;
+  validate: (value: T) => boolean;
 }
-
 export interface InputLogInProps<T> {
-    icon?: ReactNode;
-    placeholder?: string;
-    type?: string;
-    maxLength?: number;
-    state: T; 
-    setState: React.Dispatch<React.SetStateAction<T>>;
+  icon?: ReactNode;
+  placeholder?: string;
+  type?: string;
+  maxLength?: number;
+  state: T;
+  setState: React.Dispatch<React.SetStateAction<T>>;
 }
-
 export interface BlackSquareProps {
-    transform: number;
-    width: number;
+  transform: number;
+  width: number;
 }
-
 export interface FormTitleSubtitleProps {
-    title: string;
-    subtitle: string;
+  title: string;
+  subtitle: string;
 }

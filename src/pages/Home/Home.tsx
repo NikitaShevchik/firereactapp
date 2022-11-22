@@ -5,31 +5,35 @@ import BlackSquare from '../../components/BlackSquare/BlackSquare';
 import { userInfo } from '../../redux/reducers/userReducer';
 
 const Home = () => {
-    const location = useLocation();
+  const location = useLocation();
 
-    const [email, setEmail] = useState(userInfo.getState().email);
-    function emailSub() {
-        setEmail(userInfo.getState().email);
-    }
-    userInfo.subscribe(emailSub);
-    const transformLeft = 66.6;
-    const transformRight = 0;
+  const [email, setEmail] = useState(userInfo.getState().email);
+  function emailSub() {
+    setEmail(userInfo.getState().email);
+  }
+  userInfo.subscribe(emailSub);
+  const transformLeft = 66.6;
+  const transformRight = 0;
 
-    return email ? (
-        <Navigate to='/main' />
-    ) : (
-        <div>
-            <BlackSquare
-                transform={
-                    location.pathname === '/login' ? transformLeft : transformRight
-                        || location.pathname === '/signup' ? transformRight : transformLeft
-                            || location.pathname === '/' ? transformRight : transformLeft
-                }
-                width={location.pathname === '/' ? 100 : 60}
-            />
-            <Outlet />
-        </div>
-    );
+  return email ? (
+    <Navigate to='/main' />
+  ) : (
+    <div>
+      <BlackSquare
+        transform={
+          location.pathname === '/login'
+            ? transformLeft
+            : transformRight || location.pathname === '/signup'
+            ? transformRight
+            : transformLeft || location.pathname === '/'
+            ? transformRight
+            : transformLeft
+        }
+        width={location.pathname === '/' ? 100 : 60}
+      />
+      <Outlet />
+    </div>
+  );
 };
 
 export default Home;

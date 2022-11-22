@@ -1,4 +1,3 @@
-import React from 'react';
 import { PlugProps } from '../../types/types';
 
 const Plug = ({ wdth }: PlugProps) => (

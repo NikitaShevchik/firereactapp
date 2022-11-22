@@ -1,5 +1,3 @@
-import React, { useState } from 'react';
-import { userInfo } from '../../redux/reducers/userReducer';
 import FormOffer from '../../components/FormOffer/FormOffer';
 import FormTitleSubtitle from '../../components/FormTitleSubtitle/FormTitleSubtitle';
 import Plug from '../../components/Plug/Plug';
@@ -7,13 +5,6 @@ import SignUpForm from '../../components/Forms/SignUpForm/SignUpForm';
 import './SignUp.scss';
 
 const SignUp = () => {
-  const [userEmail, setUserEmail] = useState(userInfo.getState().email);
-  userInfo.subscribe(userChanged);
-  function userChanged() {
-    setUserEmail(userInfo.getState().email);
-    console.log(userEmail);
-  }
-
   return (
     <div className='signup'>
       <div className='signup__wrapper'>

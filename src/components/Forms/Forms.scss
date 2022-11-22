@@ -7,7 +7,6 @@ $fsadapt: calc(1vh + 1vw);
         flex-direction: column;
         width: 100%;
     }
-
     &__subtext {
         font-size: calc($fsadapt / 1.5);
         padding-bottom: calc($fsadapt/ 3);

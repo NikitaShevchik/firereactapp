@@ -11,7 +11,7 @@
     ],
     "types": [
       "node"
-    ], // это была ошибка process
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,

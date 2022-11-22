@@ -9,9 +9,7 @@ const useErrorInput = (error: string) => {
   } else if (error === 'Firebase: Error (auth/invalid-email).') {
     errorText = 'Invalid email';
   }
-  return (
-    errorText && <FormError text={errorText} />
-  )
+  return errorText && <FormError text={errorText} />;
 };
 
 export default useErrorInput;
