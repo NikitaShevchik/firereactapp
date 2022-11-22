@@ -1,17 +1,16 @@
-$fsadapt: calc(1vh + 1vw);
+$adapt: calc(1vh + 1vw);
 
 .button {
     width: 100%;
     border: none;
     background-color: #000;
     color: #fff;
-    border-radius: calc($fsadapt / 2.3);
-    padding: calc($fsadapt / 1.9);
-    font-size: calc($fsadapt / 1.8);
+    border-radius: calc($adapt / 2.3);
+    padding: calc($adapt / 1.9);
+    font-size: calc($adapt / 1.8);
 }
 
 .button._disabled {
-    cursor: not-allowed;
     background-color: rgba(0, 0, 0, 0.3);
     color: #fff;
 }

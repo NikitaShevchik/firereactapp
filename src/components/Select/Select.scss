@@ -1,18 +1,18 @@
-$fsadapt: calc(1vh + 1vw);
+$adapt: calc(1vh + 1vw);
 
 .select {
     width: 100%;
-    margin-bottom: calc($fsadapt / 2);
-    border: calc($fsadapt / 25) solid transparent;
+    margin-bottom: calc($adapt / 2);
+    border: calc($adapt / 25) solid transparent;
     background-color: #f5f5f5;
-    border-radius: calc($fsadapt / 2.3);
-    font-size: calc($fsadapt/ 1.8);
-    padding: 0 calc($fsadapt / 1.9);
+    border-radius: calc($adapt / 2.3);
+    font-size: calc($adapt/ 1.8);
+    padding: 0 calc($adapt / 1.9);
     &__option {
         &:first-child {
             color: #bbbbbb;
         }
-        font-size: calc($fsadapt/ 1.8);
+        font-size: calc($adapt/ 1.8);
         margin: 20px;
         color: #000;
     }

@@ -1,4 +1,4 @@
-$fsadapt: calc(1vh + 1vw);
+$adapt: calc(1vh + 1vw);
 
 .login {
     width: 100%;
@@ -27,9 +27,8 @@ $fsadapt: calc(1vh + 1vw);
         justify-content: center;
     }
     &__content {
-        width: calc($fsadapt * 14);
-        padding: calc($fsadapt / 2);
-        // border: 1px solid red;
+        width: calc($adapt * 14);
+        padding: calc($adapt / 2);
         display: flex;
         justify-content: center;
         align-items: center;

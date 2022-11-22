@@ -1,4 +1,4 @@
-$fsadapt: calc(1vh + 1vw);
+$adapt: calc(1vh + 1vw);
 
 .form {
     width: 100%;
@@ -8,12 +8,12 @@ $fsadapt: calc(1vh + 1vw);
         width: 100%;
     }
     &__subtext {
-        font-size: calc($fsadapt / 1.5);
-        padding-bottom: calc($fsadapt/ 3);
+        font-size: calc($adapt / 1.5);
+        padding-bottom: calc($adapt/ 3);
     }
     &__date {
         display: flex;
         flex-direction: row;
-        gap: calc($fsadapt / 4);
+        gap: calc($adapt / 4);
     }
 }

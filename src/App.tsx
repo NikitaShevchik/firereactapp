@@ -1,10 +1,10 @@
 import { Route, Routes } from 'react-router-dom';
-import Home from './pages/Home/Home';
-import LogIn from './pages/LogIn/LogIn';
-import SignUp from './pages/SignUp/SignUp';
-import './firebase';
-import Main from './pages/Main/Main';
 import { ToastContainer } from 'react-toastify';
+import SignUp from './pages/SignUp/SignUp';
+import LogIn from './pages/LogIn/LogIn';
+import Main from './pages/Main/Main';
+import Home from './pages/Home/Home';
+import './firebase';
 import 'react-toastify/dist/ReactToastify.css';
 
 function App() {

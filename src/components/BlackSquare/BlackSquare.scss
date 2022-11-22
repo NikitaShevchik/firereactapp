@@ -1,8 +1,8 @@
-$fsadapt: calc(1vh + 1vw);
+$adapt: calc(1vh + 1vw);
 
 .logo {
     overflow: hidden;
-    font-size: calc($fsadapt / 1.1);
+    font-size: calc($adapt / 1.1);
     position: absolute;
     z-index: 10;
     transition: transform 0.4s ease-in, width 0.4s ease-in;
@@ -16,30 +16,29 @@ $fsadapt: calc(1vh + 1vw);
     display: flex;
     flex-direction: column;
     &__buttons {
-        margin-top: calc($fsadapt / 1);
-        animation: opacity 1s linear;
+        margin-top: calc($adapt / 1);
     }
     &::before {
         content: "";
         position: absolute;
-        top: calc($fsadapt * (-18));
-        left: calc($fsadapt);
-        width: calc($fsadapt * 25);
-        height: calc($fsadapt * 25);
+        top: calc($adapt * (-18));
+        left: calc($adapt);
+        width: calc($adapt * 25);
+        height: calc($adapt * 25);
         border-radius: 50%;
-        border: calc($fsadapt / 10) dashed #fff;
+        border: calc($adapt / 10) dashed #fff;
         opacity: 0.3;
         animation: circle 44s linear infinite;
     }
     &::after {
         content: "";
         position: absolute;
-        bottom: calc($fsadapt * (-12));
-        right: $fsadapt;
-        width: calc($fsadapt * 15);
-        height: calc($fsadapt * 15);
+        bottom: calc($adapt * (-12));
+        right: $adapt;
+        width: calc($adapt * 15);
+        height: calc($adapt * 15);
         border-radius: 50%;
-        border: calc($fsadapt / 10) dashed #fff;
+        border: calc($adapt / 10) dashed #fff;
         opacity: 0.3;
         animation: circle 44s linear infinite;
     }
@@ -51,20 +50,11 @@ $fsadapt: calc(1vh + 1vw);
         }
     }
 }
-
 @keyframes circle {
     0% {
         rotate: (0deg);
     }
     100% {
         rotate: (360deg);
-    }
-}
-@keyframes opacity {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
     }
 }

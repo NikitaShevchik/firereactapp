@@ -1,14 +1,14 @@
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import React, { useState } from 'react';
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import { AiOutlineLock, AiOutlineMail } from 'react-icons/ai';
-import Input from '../../Input/LogIn/Input';
 import { app } from '../../../firebase';
 import { userInfo } from '../../../redux/reducers/userReducer';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import Input from '../../Input/LogIn/Input';
 import useErrorInput from '../../../hooks/useErrorInput';
 import ButtonForm from '../../Buttons/ButtonForm/ButtonForm';
 import '../Forms.scss';
-import { toast } from 'react-toastify';
 
 const SignInForm = () => {
   const navigate = useNavigate();

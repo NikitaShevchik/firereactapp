@@ -13,16 +13,13 @@ export function isValidPassword(password: string) {
   const containsLetters = /^.*[a-zA-Z]+.*$/;
   const minimum8Chars = /^.{8,}$/;
   const minOneBigLetter = /^.*[A-Z]{1}.*$/;
-  if (
+
+  return (
     minimum8Chars.test(password) &&
     withoutSpecialChars.test(password) &&
     containsLetters.test(password) &&
     minOneBigLetter.test(password)
-  ) {
-    return true;
-  } else {
-    return false;
-  }
+  );
 }
 
 export function isValidDay(day: number) {
@@ -30,11 +27,7 @@ export function isValidDay(day: number) {
 }
 
 export function isValidYear(year: number) {
-  if (year > 1900 && year <= 2010) {
-    return true;
-  } else {
-    return false;
-  }
+  return year > 1900 && year <= 2010;
 }
 
 export function mainValidator({
@@ -44,15 +37,11 @@ export function mainValidator({
   wBirthDay,
   wBirthYear,
 }: IMainValidation) {
-  if (
+  return (
     isValidEmail(wEmail) &&
     isValidFullName(wFullName) &&
     isValidPassword(wPassword) &&
     isValidDay(wBirthDay) &&
     isValidYear(wBirthYear)
-  ) {
-    return true;
-  } else {
-    return false;
-  }
+  );
 }

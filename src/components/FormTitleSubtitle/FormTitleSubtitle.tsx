@@ -1,4 +1,3 @@
-import React from 'react';
 import { FormTitleSubtitleProps } from '../../types/types';
 import './FormTitleSubtitle.scss';
 

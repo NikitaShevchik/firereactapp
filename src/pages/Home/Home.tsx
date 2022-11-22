@@ -5,9 +5,9 @@ import BlackSquare from '../../components/BlackSquare/BlackSquare';
 import { userInfo } from '../../redux/reducers/userReducer';
 
 const Home = () => {
+  const [email, setEmail] = useState(userInfo.getState().email);
   const location = useLocation();
 
-  const [email, setEmail] = useState(userInfo.getState().email);
   function emailSub() {
     setEmail(userInfo.getState().email);
   }

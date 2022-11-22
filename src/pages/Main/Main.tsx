@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import { userInfo } from '../../redux/reducers/userReducer';
 
@@ -10,7 +10,7 @@ const Main = () => {
   userInfo.subscribe(emailSub);
 
   return email ? (
-    <div style={{ padding: '150px' }}>
+    <div>
       {email}
       <button onClick={() => userInfo.dispatch({ type: 'REMOVE_USER' })}>Log out</button>
     </div>

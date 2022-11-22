@@ -5,6 +5,7 @@ import { AiOutlineLock, AiOutlineMail, AiOutlineUser } from 'react-icons/ai';
 import { useNavigate } from 'react-router-dom';
 import { app } from '../../../firebase';
 import { userInfo } from '../../../redux/reducers/userReducer';
+import { monthsArray } from '../../Select/arraysForSelect/arrayMonths';
 import {
   isValidDay,
   isValidEmail,
@@ -17,7 +18,6 @@ import FormError from '../../FormError/FormError';
 import Input from '../../Input/SignUp/Input';
 import Select from '../../Select/Select';
 import ButtonFormDisabled from '../../Buttons/ButtonForm/ButtonFormDisabled/ButtonFormDisabled';
-import { monthsArray } from '../../Select/arraysForSelect/arrayMonths';
 import ButtonForm from '../../Buttons/ButtonForm/ButtonForm';
 import '../Forms.scss';
 
@@ -26,7 +26,6 @@ const SignUpForm = () => {
   const navigate = useNavigate();
   const { register, watch } = useForm();
   const [errorCodeFirebase, setErrorCodeFirebase] = useState('');
-
   const wFullName = watch('FullName');
   const wEmail = watch('Email');
   const wPassword = watch('Password');
