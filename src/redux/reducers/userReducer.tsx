@@ -1,15 +1,15 @@
-import { IAction, IUser } from "../../types/types";
-import createStore from "../store";
+import { IAction, IUser } from '../../types/types';
+import createStore from '../store';
 
-let initUser: IUser = {
+const initUser: IUser = {
     email: null,
     fullName: null,
     id: null,
     token: null,
     birthMonth: null,
     birthDay: null,
-    birthYear: null
-}
+    birthYear: null,
+};
 
 function userReducer(state: IUser, action: IAction<IUser>) {
     switch (action.type) {
@@ -21,8 +21,8 @@ function userReducer(state: IUser, action: IAction<IUser>) {
                 token: action.payload?.token,
                 birthMonth: action.payload?.birthMonth,
                 birthDay: action.payload?.birthDay,
-                birthYear: action.payload?.birthYear
-            }
+                birthYear: action.payload?.birthYear,
+            };
         case 'REMOVE_USER':
             return {
                 email: null,
@@ -31,12 +31,11 @@ function userReducer(state: IUser, action: IAction<IUser>) {
                 token: null,
                 birthMonth: null,
                 birthDay: null,
-                birthYear: null
-            }
+                birthYear: null,
+            };
         default:
-            return state
+            return state;
     }
 }
 
-export const userInfo = createStore<IUser, Partial<IUser>>(userReducer, initUser)
-
+export const userInfo = createStore<IUser, Partial<IUser>>(userReducer, initUser);

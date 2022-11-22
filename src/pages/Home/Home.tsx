@@ -1,31 +1,35 @@
 import React, { useState } from 'react';
-import { Navigate, useLocation } from "react-router";
+import { Navigate, useLocation } from 'react-router';
 import { Outlet } from 'react-router-dom';
 import BlackSquare from '../../components/BlackSquare/BlackSquare';
 import { userInfo } from '../../redux/reducers/userReducer';
 
 const Home = () => {
-    const location = useLocation()
+    const location = useLocation();
 
-    const [email, setEmail] = useState(userInfo.getState().email)
+    const [email, setEmail] = useState(userInfo.getState().email);
     function emailSub() {
-        setEmail(userInfo.getState().email)
+        setEmail(userInfo.getState().email);
     }
-    userInfo.subscribe(emailSub)
+    userInfo.subscribe(emailSub);
+    const transformLeft = 66.6;
+    const transformRight = 0;
 
-    return email ?
-        <Navigate to="/main" />
-        :
-        (
-            <div >
-                <BlackSquare transform={location.pathname === '/login' ? 66.66 : 0
-                    || location.pathname === '/signup' ? 0 : 66.66
-                        || location.pathname === '/' ? 0 : 66.66
+    return email ? (
+        <Navigate to='/main' />
+    ) : (
+        <div>
+            <BlackSquare
+                transform={
+                    location.pathname === '/login' ? transformLeft : transformRight
+                        || location.pathname === '/signup' ? transformRight : transformLeft
+                            || location.pathname === '/' ? transformRight : transformLeft
                 }
-                    width={location.pathname === '/' ? 100 : 60} />
-                <Outlet />
-            </div >
-        )
-}
+                width={location.pathname === '/' ? 100 : 60}
+            />
+            <Outlet />
+        </div>
+    );
+};
 
-export default Home
+export default Home;

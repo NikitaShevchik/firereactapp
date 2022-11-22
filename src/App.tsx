@@ -8,10 +8,10 @@ import Main from './pages/Main/Main';
 
 function App() {
   return (
-    <div className="App">
+    <div className='App'>
       <div>
         <Routes>
-          <Route path='/' element={<Home />} >
+          <Route path='/' element={<Home />}>
             <Route path='login' element={<LogIn />} />
             <Route path='signup' element={<SignUp />} />
           </Route>
