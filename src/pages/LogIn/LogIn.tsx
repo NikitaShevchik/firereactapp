@@ -14,7 +14,7 @@ const LogIn = () => {
               <div className='form__content'>
                 <FormTitleSubtitle title={'Welcome Back!'} subtitle={'Log In to Your Account'} />
                 <SignInForm />
-                <FormOffer text={"Don't have an account?"} linkText={'Sign Up'} path={'/signup'} />
+                <FormOffer text={'Don\'t have an account?'} linkText={'Sign Up'} path={'/signup'} />
               </div>
             </div>
           </div>
