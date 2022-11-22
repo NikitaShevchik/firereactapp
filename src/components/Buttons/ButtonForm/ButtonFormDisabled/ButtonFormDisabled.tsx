@@ -1,8 +1,13 @@
+import { toast } from 'react-toastify';
 import { ButtonProps } from '../../../../types/types';
-import './ButtonForm.scss';
+import '../ButtonForm.scss';
 
 const ButtonFormDisabled = ({ text }: ButtonProps) => (
-  <button disabled type='submit' className='button _disabled'>
+  <button
+    type='button'
+    onClick={() => toast.error('Incorrectly Completed Form', { position: 'top-right' })}
+    className='button _disabled'
+  >
     {text}
   </button>
 );

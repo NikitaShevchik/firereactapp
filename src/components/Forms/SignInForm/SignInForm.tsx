@@ -6,8 +6,9 @@ import { app } from '../../../firebase';
 import { userInfo } from '../../../redux/reducers/userReducer';
 import { useNavigate } from 'react-router-dom';
 import useErrorInput from '../../../hooks/useErrorInput';
-import ButtonForm from '../../Buttons/ButtonForm/ButtonFormDisabled/ButtonForm';
+import ButtonForm from '../../Buttons/ButtonForm/ButtonForm';
 import '../Forms.scss';
+import { toast } from 'react-toastify';
 
 const SignInForm = () => {
   const navigate = useNavigate();
@@ -33,6 +34,7 @@ const SignInForm = () => {
       navigate('/main');
     } catch (error: unknown) {
       if (error instanceof Error) {
+        toast.error('Incorrectly Completed Form', { position: 'top-left' });
         setErrorCodeFirebase(error.message);
       }
     }

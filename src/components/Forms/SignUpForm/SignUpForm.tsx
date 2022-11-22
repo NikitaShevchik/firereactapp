@@ -16,9 +16,9 @@ import {
 import FormError from '../../FormError/FormError';
 import Input from '../../Input/SignUp/Input';
 import Select from '../../Select/Select';
-import ButtonForm from '../../Buttons/ButtonForm/ButtonFormDisabled/ButtonForm';
 import ButtonFormDisabled from '../../Buttons/ButtonForm/ButtonFormDisabled/ButtonFormDisabled';
 import { monthsArray } from '../../Select/arraysForSelect/arrayMonths';
+import ButtonForm from '../../Buttons/ButtonForm/ButtonForm';
 import '../Forms.scss';
 
 const SignUpForm = () => {
@@ -54,8 +54,7 @@ const SignUpForm = () => {
       navigate('/main');
     } catch (error: unknown) {
       if (error instanceof Error) {
-        const errorCode = error.message;
-        setErrorCodeFirebase(errorCode);
+        setErrorCodeFirebase(error.message);
       }
     }
   }
