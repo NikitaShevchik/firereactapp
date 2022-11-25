@@ -1,7 +1,7 @@
 import { FormTitleSubtitleProps } from '../../types/types';
 import './FormTitleSubtitle.scss';
 
-const FormTitleSubtitle = ({ title, subtitle }: FormTitleSubtitleProps) => {
+export const FormTitleSubtitle = ({ title, subtitle }: FormTitleSubtitleProps) => {
   return (
     <div className='text'>
       <div className='text__title'>{title}</div>
@@ -9,5 +9,3 @@ const FormTitleSubtitle = ({ title, subtitle }: FormTitleSubtitleProps) => {
     </div>
   );
 };
-
-export default FormTitleSubtitle;

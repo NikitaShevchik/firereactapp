@@ -1,7 +1,3 @@
-import { PlugProps } from '../../types/types';
-
-const Plug = ({ wdth }: PlugProps) => (
-  <div style={{ width: `${wdth}%`, height: '100%', backgroundColor: '#09090c' }}></div>
+export const Plug = ({ width }: { width: number }) => (
+  <div style={{ width: `${width}%`, height: '100%', backgroundColor: '#09090c' }}></div>
 );
-
-export default Plug;

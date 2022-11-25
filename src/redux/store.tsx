@@ -1,4 +1,4 @@
-function createStore<T, K>(
+export function createStore<T, K>(
   reducer: (state: T, action: { type: string; payload?: K }) => T,
   initialState: T,
 ) {
@@ -16,5 +16,3 @@ function createStore<T, K>(
     },
   };
 }
-
-export default createStore;

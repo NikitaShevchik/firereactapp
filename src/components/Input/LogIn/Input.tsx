@@ -1,7 +1,7 @@
 import { InputLogInProps } from '../../../types/types';
 import '../Input.scss';
 
-const Input = ({
+export const Input = ({
   icon,
   placeholder,
   type,
@@ -26,5 +26,3 @@ const Input = ({
     </div>
   );
 };
-
-export default Input;

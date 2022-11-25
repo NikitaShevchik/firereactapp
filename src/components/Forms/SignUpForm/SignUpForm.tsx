@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { createUserWithEmailAndPassword, getAuth } from 'firebase/auth';
 import { useForm } from 'react-hook-form';
 import { AiOutlineLock, AiOutlineMail, AiOutlineUser } from 'react-icons/ai';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { app } from '../../../firebase';
 import { userInfo } from '../../../redux/reducers/userReducer';
-import { monthsArray } from '../../Select/arraysForSelect/arrayMonths';
+import { Button } from '../../Buttons/Button';
 import {
   isValidDay,
   isValidEmail,
@@ -14,18 +15,15 @@ import {
   isValidYear,
   mainValidator,
 } from '../../../validation';
-import FormError from '../../FormError/FormError';
-import Input from '../../Input/SignUp/Input';
-import Select from '../../Select/Select';
-import ButtonFormDisabled from '../../Buttons/ButtonForm/ButtonFormDisabled/ButtonFormDisabled';
-import ButtonForm from '../../Buttons/ButtonForm/ButtonForm';
+import { Input } from '../../Input/SignUp/Input';
+import { Select } from '../../Select/Select';
+import { monthsArray } from '../../../consts';
 import '../Forms.scss';
 
-const SignUpForm = () => {
+export const SignUpForm = () => {
   const auth = getAuth(app);
   const navigate = useNavigate();
   const { register, watch } = useForm();
-  const [errorCodeFirebase, setErrorCodeFirebase] = useState('');
   const wFullName = watch('FullName');
   const wEmail = watch('Email');
   const wPassword = watch('Password');
@@ -53,9 +51,14 @@ const SignUpForm = () => {
       navigate('/main');
     } catch (error: unknown) {
       if (error instanceof Error) {
-        setErrorCodeFirebase(error.message);
+        toast.error('Email is already registered!', { position: 'top-right' })
+      } else {
+        toast.warning('Unknown error')
       }
     }
+  }
+  const handleOnClick = () => {
+    toast.error('Incorrectly Completed Form', { position: 'top-right' })
   }
   return (
     <div className='form'>
@@ -63,7 +66,7 @@ const SignUpForm = () => {
         <Input
           watch={watch}
           validate={isValidFullName}
-          reg={register}
+          register={register}
           name={'FullName'}
           type={'text'}
           icon={<AiOutlineUser />}
@@ -72,19 +75,16 @@ const SignUpForm = () => {
         <Input
           watch={watch}
           validate={isValidEmail}
-          reg={register}
+          register={register}
           name={'Email'}
           type={'text'}
           icon={<AiOutlineMail />}
           placeholder='Email Address'
         />
-        {errorCodeFirebase === 'auth/email-already-in-use' && (
-          <FormError text={'Email is already registered'} />
-        )}
         <Input
           watch={watch}
           validate={isValidPassword}
-          reg={register}
+          register={register}
           name={'Password'}
           type={'password'}
           icon={<AiOutlineLock />}
@@ -92,11 +92,11 @@ const SignUpForm = () => {
         />
         <div className='form__subtext'>Date of birth:</div>
         <div className='form__date'>
-          <Select reg={register} name={'BirthMonth'} placeholder={'Month'} array={monthsArray} />
+          <Select register={register} name={'BirthMonth'} placeholder={'Month'} array={monthsArray} />
           <Input<number>
             watch={watch}
             validate={isValidDay}
-            reg={register}
+            register={register}
             name={'BirthDay'}
             type='number'
             maxLength={2}
@@ -105,7 +105,7 @@ const SignUpForm = () => {
           <Input<number>
             watch={watch}
             validate={isValidYear}
-            reg={register}
+            register={register}
             name={'BirthYear'}
             type='number'
             maxLength={4}
@@ -113,13 +113,11 @@ const SignUpForm = () => {
           />
         </div>
         {mainValidator({ wEmail, wFullName, wPassword, wBirthDay, wBirthYear }) ? (
-          <ButtonForm text={'Register'} />
+          <Button text={'Register'} type={'submit'} />
         ) : (
-          <ButtonFormDisabled text={'Register'} />
+          <Button type={'button'} className={'_disabled'} text={'Register'} callback={handleOnClick} />
         )}
       </form>
     </div>
   );
 };
-
-export default SignUpForm;

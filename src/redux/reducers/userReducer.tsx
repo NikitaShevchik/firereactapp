@@ -1,5 +1,6 @@
 import { IAction, IUser } from '../../types/types';
-import createStore from '../store';
+import { createStore } from '../store';
+
 
 const initUser: IUser = {
   email: null,

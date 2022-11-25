@@ -1,9 +1,0 @@
-$adapt: calc(1vh + 1vw);
-
-.welcomebutton {
-    font-size: calc($adapt / 2);
-    padding: calc($adapt / 3) calc($adapt * 1.7);
-    margin: 0 calc($adapt / 5);
-    border-radius: calc($adapt / 2.5);
-    background-color: #fff;
-}

@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
 import { AiOutlineLock, AiOutlineMail } from 'react-icons/ai';
 import { app } from '../../../firebase';
 import { userInfo } from '../../../redux/reducers/userReducer';
-import { useNavigate } from 'react-router-dom';
+import { Button } from '../../Buttons/Button';
 import { toast } from 'react-toastify';
-import Input from '../../Input/LogIn/Input';
-import useErrorInput from '../../../hooks/useErrorInput';
-import ButtonForm from '../../Buttons/ButtonForm/ButtonForm';
+import { Input } from '../../Input/LogIn/Input';
+import { useErrorInput } from '../../../hooks/useErrorInput';
 import '../Forms.scss';
 
-const SignInForm = () => {
+export const SignInForm = () => {
   const navigate = useNavigate();
   const [errorCodeFirebase, setErrorCodeFirebase] = useState('');
   const [email, setEmail] = useState<string>('');
@@ -34,8 +34,10 @@ const SignInForm = () => {
       navigate('/main');
     } catch (error: unknown) {
       if (error instanceof Error) {
-        toast.error('Incorrectly Completed Form', { position: 'top-left' });
         setErrorCodeFirebase(error.message);
+        { errorMessage }
+      } else {
+        toast.warning('Unknown error')
       }
     }
   }
@@ -56,11 +58,8 @@ const SignInForm = () => {
           state={password}
           setState={setPassword}
         />
-        {errorMessage}
-        <ButtonForm text={'Log In'} />
+        <Button text={'Log In'} type={'submit'} />
       </div>
     </form>
   );
 };
-
-export default SignInForm;

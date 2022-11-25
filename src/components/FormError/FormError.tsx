@@ -1,8 +1,7 @@
 import { BiError } from 'react-icons/bi';
-import { FormErrorProps } from '../../types/types';
 import './FormError.scss';
 
-const FormError = ({ text }: FormErrorProps) => {
+export const FormError = ({ text }: { text: string }) => {
   return (
     <div className='error'>
       <div className='error__icon'>
@@ -12,5 +11,3 @@ const FormError = ({ text }: FormErrorProps) => {
     </div>
   );
 };
-
-export default FormError;

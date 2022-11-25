@@ -1,10 +1,10 @@
-import SignInForm from '../../components/Forms/SignInForm/SignInForm';
-import FormOffer from '../../components/FormOffer/FormOffer';
-import FormTitleSubtitle from '../../components/FormTitleSubtitle/FormTitleSubtitle';
-import Plug from '../../components/Plug/Plug';
+import { FormOffer } from '../../components/FormOffer/FormOffer';
+import { SignInForm } from '../../components/Forms/SignInForm/SignInForm';
+import { FormTitleSubtitle } from '../../components/FormTitleSubtitle/FormTitleSubtitle';
+import { Plug } from '../../components/Plug/Plug';
 import './LogIn.scss';
 
-const LogIn = () => {
+export const LogIn = () => {
   return (
     <div className='login'>
       <div className='login__wrapper'>
@@ -18,11 +18,9 @@ const LogIn = () => {
               </div>
             </div>
           </div>
-          <Plug wdth={60} />
+          <Plug width={60} />
         </div>
       </div>
     </div>
   );
 };
-
-export default LogIn;

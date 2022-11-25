@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import { userInfo } from '../../redux/reducers/userReducer';
 
-const Main = () => {
+export const Main = () => {
   const [email, setEmail] = useState(userInfo.getState().email);
   function emailSub() {
     setEmail(userInfo.getState().email);
@@ -18,5 +18,3 @@ const Main = () => {
     <Navigate to='/' />
   );
 };
-
-export default Main;

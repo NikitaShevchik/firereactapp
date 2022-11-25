@@ -1,15 +1,20 @@
-import FormError from '../components/FormError/FormError';
+import { toast } from 'react-toastify';
+import { useEffect } from 'react'
 
-const useErrorInput = (error: string) => {
-  let errorText = null;
-  if (error.includes('user-not-found')) {
-    errorText = 'User/Email is not found';
-  } else if (error.includes('wrong-password')) {
-    errorText = 'Wrong password';
-  } else if (error.includes('invalid-email')) {
-    errorText = 'Invalid email';
-  }
-  return errorText && <FormError text={errorText} />;
+export const useErrorInput = (error: string) => {
+  useEffect((): void => {
+    let errorText = null;
+    if (error.includes('user-not-found')) {
+      errorText = 'Email is not found';
+    }
+    if (error.includes('wrong-password')) {
+      errorText = 'Wrong password';
+    }
+    if (error.includes('invalid-email')) {
+      errorText = 'Invalid email';
+    }
+    if (errorText) {
+      toast.error(`${errorText}`, { position: 'top-left', autoClose: false });
+    }
+  }, [error])
 };
-
-export default useErrorInput;

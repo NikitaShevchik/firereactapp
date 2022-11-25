@@ -16,7 +16,8 @@ $adapt: calc(1vh + 1vw);
     display: flex;
     flex-direction: column;
     &__buttons {
-        margin-top: calc($adapt / 1);
+        margin-top: calc($adapt / 3);
+        width: calc($adapt * 8);
     }
     &::before {
         content: "";

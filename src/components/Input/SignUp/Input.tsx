@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import { InputSignUpProps } from '../../../types/types';
 import '../Input.scss';
 
-const Input = <T = string,>({
+export const Input = <T = string,>({
   watch,
   icon,
   placeholder,
   type,
   maxLength,
-  reg,
+  register,
   name,
   validate,
 }: InputSignUpProps<T>) => {
@@ -34,7 +34,7 @@ const Input = <T = string,>({
         <div className='input__icon'>{icon}</div>
         <input
           type={type}
-          {...reg(name)}
+          {...register(name)}
           onFocus={() => setActive(true)}
           onBlur={() => borderColors()}
           maxLength={maxLength}
@@ -45,5 +45,3 @@ const Input = <T = string,>({
     </div>
   );
 };
-
-export default Input;

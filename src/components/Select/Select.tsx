@@ -1,9 +1,9 @@
 import { SelectProps } from '../../types/types';
 import './Select.scss';
 
-const Select = ({ array, placeholder, reg, name }: SelectProps<string>) => {
+export const Select = ({ array, placeholder, register, name }: SelectProps<string>) => {
   return (
-    <select {...reg(name)} className='select'>
+    <select {...register(name)} className='select'>
       <option value={placeholder} disabled className='select__option'>
         {placeholder}
       </option>
@@ -17,5 +17,3 @@ const Select = ({ array, placeholder, reg, name }: SelectProps<string>) => {
     </select>
   );
 };
-
-export default Select;

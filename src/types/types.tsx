@@ -29,10 +29,9 @@ export interface IMainValidation {
 }
 export interface ButtonProps {
   text: string;
-  cb?: VoidFunction;
-}
-export interface FormErrorProps {
-  text: string;
+  callback?: VoidFunction;
+  className?: string;
+  type?: 'button' | 'submit' | 'reset';
 }
 export interface FormOfferProps {
   text: string;
@@ -42,11 +41,8 @@ export interface FormOfferProps {
 export interface SelectProps<T> {
   array: Array<T>;
   placeholder: string;
-  reg: UseFormRegister<FieldValues>;
+  register: UseFormRegister<FieldValues>;
   name: string;
-}
-export interface PlugProps {
-  wdth: number;
 }
 export interface InputSignUpProps<T> {
   watch: UseFormWatch<FieldValues>;
@@ -54,7 +50,7 @@ export interface InputSignUpProps<T> {
   placeholder?: string;
   type?: string;
   maxLength?: number;
-  reg: UseFormRegister<FieldValues>;
+  register: UseFormRegister<FieldValues>;
   name: string;
   validate: (value: T) => boolean;
 }
