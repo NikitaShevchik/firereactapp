@@ -1,0 +1,20 @@
+$adapt: calc(1vh + 1vw);
+.button {
+    width: 100%;
+    border: none;
+    background-color: #000;
+    color: #fff;
+    border-radius: calc($adapt / 2.3);
+    padding: calc($adapt / 1.9);
+    font-size: calc($adapt / 1.8);
+    &._disabled {
+        background-color: rgba(0, 0, 0, 0.3);
+        color: #fff;
+    }
+    &._welcome {
+        color: #000;
+        padding: calc($adapt / 1.9) calc($adapt * 3);
+        margin: calc($adapt / 5) 0;
+        background-color: #fff;
+    }
+}

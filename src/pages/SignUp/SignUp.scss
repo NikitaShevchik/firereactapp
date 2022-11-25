@@ -1,0 +1,37 @@
+$adapt: calc(1vh + 1vw);
+
+.signup {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    &__wrapper {
+        height: 100%;
+        width: 100%;
+    }
+    &__content {
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+    }
+    &__form {
+        width: 40%;
+        height: 100%;
+    }
+}
+.form {
+    &__body {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &__content {
+        width: calc($adapt * 14);
+        padding: calc($adapt / 2);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+}
